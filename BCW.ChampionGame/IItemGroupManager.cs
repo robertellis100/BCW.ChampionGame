@@ -13,8 +13,8 @@ namespace BCW.ChampionGame
         //decimal CalculateTotalPriceOfItemList(ItemGroup itemGroup);
         //int CalculateTotalQuantityOfItemList(ItemGroup itemGroup);
         //ISummaryItemGroup SummarizeItemListTotalQuantityByItemType(ItemGroup itemGroup, TypeSet typeSet);
-        void AddItemToItemList(Item item);
-        void RemoveItemFromItemList(Item item);
+        void AddItemToItemList(Item item, List<Item> list);
+        void RemoveItemFromItemList(Item item, List<Item> list);
         decimal CalculateTotalPriceOfItemList(List<Item> list);
         int CalculateTotalQuantityOfItemList(List<Item> list);
         ISummaryItemGroup SummarizeItemListTotalQuantityByItemType(TypeSet typeSet, List<Item> list);

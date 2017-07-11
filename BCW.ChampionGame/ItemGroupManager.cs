@@ -8,16 +8,16 @@ namespace BCW.ChampionGame
 {
     public class ItemGroupManager : IItemGroupManager
     {
-        public List<Item> ItemList { get; set; } = new List<Item>();
+        public List<Item> ItemList { get; set; } 
         public string ManagerName { get; set; }
-        public void AddItemToItemList(Item item)
+        public void AddItemToItemList(Item item, List<Item> list)
         {
-            ItemList.Add(item);
+            list.Add(item);
         }
 
-        public void RemoveItemFromItemList(Item item)
+        public void RemoveItemFromItemList(Item item, List<Item> list)
         {
-            ItemList.Remove(item);
+            list.Remove(item);
         }
 
         public decimal CalculateTotalPriceOfItemList(List<Item> list)
@@ -49,7 +49,7 @@ namespace BCW.ChampionGame
                 summaryItem.Name = firstItem.Name;
                 summaryItem.Description = firstItem.Description;
                 summaryItem.Price = firstItem.Price;
-                summaryItem.Quantity++;
+                //summaryItem.Quantity++;
 
                 foreach (var item in list.Where(e => e.TypeId == type.TypeId)) 
                 {

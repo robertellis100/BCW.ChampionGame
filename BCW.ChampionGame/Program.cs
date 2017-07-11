@@ -28,17 +28,16 @@ namespace BCW.ChampionGame
             Console.WriteLine("Welcome to " + willysStore.ManagerName);
             willysStore.ViewItems(willysStore.ItemList);
             var item = willysStore.GetItemByName("Old Rusty", willysStore.ItemList);
-            myCart.AddItemToItemList(item);
+            myCart.AddItemToItemList(item, myCart.ItemList);
             myCart.ViewItems(myCart.ItemList);
             Console.WriteLine("Total Price of All Items in Cart: "+myCart.CalculateTotalPriceOfItemList(myCart.ItemList));
             Console.WriteLine("Total Quantity of Items in Cart: "+myCart.CalculateTotalQuantityOfItemList(myCart.ItemList));
-            Console.WriteLine("Total Quantity of Items in Cart by Item Type: ");
+            Console.WriteLine("Store Inventory Summary--Total Quantity of Items in Store by Item Type: ");
             var storeInventorySummary = willysStore.SummarizeItemListTotalQuantityByItemType(myTypeSet, willysStore.ItemList);
             foreach (var it in storeInventorySummary.ItemSummaryList)
             {
                 Console.WriteLine(it.TypeName + "       Quantity: " + it.TypeQuantity);
                 Console.WriteLine(it.TypeDescription + "        First: " + it.Name);
-
             }
             Console.ReadLine();
 
